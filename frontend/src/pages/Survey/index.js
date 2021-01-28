@@ -6,8 +6,7 @@ import * as styles from './styles';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import history from '~/services/history';
-function CreateQuestions() {
-
+function Survey() {
   const [questions, setQuestions] = useState([]);
   const [survey, setSurvey] = useState({ title: null, createdAt: null });
   /* async function getSurvey(profile) {
@@ -80,27 +79,25 @@ function CreateQuestions() {
   useEffect(() => {
     loadQuestions();
     getSurveyInfo();
-
   }, [setQuestions, setSurvey]);
 
   async function handleSubmit(data, id) {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         async function (position) {
-          console.log('Latitude is :', position.coords.latitude);
-          console.log('Longitude is :', position.coords.longitude);
           data.lat = position.coords.latitude;
           data.long = position.coords.longitude;
 
-          const sucess =await api.post('/answers?question=' + id, data).catch((error) => {
-            toast.error('Erro ao responder a pergunta');
-            console.log(error)
-          });
+          const sucess = await api
+            .post('/answers?question=' + id, data)
+            .catch((error) => {
+              toast.error('Erro ao responder a pergunta');
+              console.log(error);
+            });
           loadQuestions();
-          if(sucess){
+          if (sucess) {
             toast.success('Criado com sucesso');
           }
-
         },
         function (error) {
           if (error.code === 1) {
@@ -161,4 +158,4 @@ function CreateQuestions() {
   );
 }
 
-export default CreateQuestions;
+export default Survey;
