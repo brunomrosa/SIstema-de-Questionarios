@@ -85,7 +85,7 @@ function CreateQuestions() {
       .cloneNode(true);
     originalInput.querySelector('.input1').value = '';
 
-    const lu = document
+    document
       .getElementsByClassName('question-list')[0]
       .appendChild(originalInput);
 

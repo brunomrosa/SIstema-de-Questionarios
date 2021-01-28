@@ -6,8 +6,8 @@
 
 ##### docker run -d -e POSTGRES_USER=agrotools -e POSTGRES_PASSWORD=agrotools -e POSTGRES_DB=agrotools -p 5432:5432 --name agrotools postgres:10 
 
-Após isso, na pasta do projeto **renomeie o arquivo .env.example para .env e substitua o campo DB_HOST no arquivo .env para o ip do Docker** 
-(por padrão é localhost, mas caso você tenha alterado ele utilize o ip que você definiu)
+Após isso, na pasta do projeto **renomeie o arquivo .env.example para .env e substitua o campo DB_HOST no arquivo .env para o ip do Docker(somente se você tiver alterado)** 
+(por padrão é o próprio localhost, mas caso você tenha alterado ele utilize o ip que você definiu)
 **Por padrão as credenciais de acesso do banco serão: usuário, senha e schema: agrotools**
 
 ## Rode os seguintes comando DENTRO da pasta backend 

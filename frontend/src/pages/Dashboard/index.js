@@ -7,9 +7,7 @@ import * as styles from './styles';
 export default function Dashboard() {
   const [survey, setSurvey] = useState([]);
 
-  function handleRedirect(id) {
-    history.push(`/questionario?=${id}`);
-  }
+
 
   useEffect(() => {
     async function loadSurvey() {

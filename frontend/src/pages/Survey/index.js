@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import api from '~/services/api';
 import { Form, Input } from '@rocketseat/unform';
-import { useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import * as styles from './styles';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import history from '~/services/history';
 function CreateQuestions() {
-  const [render, setRender] = useState(1);
+
   const [questions, setQuestions] = useState([]);
   const [survey, setSurvey] = useState({ title: null, createdAt: null });
   /* async function getSurvey(profile) {
@@ -81,8 +80,8 @@ function CreateQuestions() {
   useEffect(() => {
     loadQuestions();
     getSurveyInfo();
-    console.log(render);
-  }, [setQuestions, setSurvey, setRender]);
+
+  }, [setQuestions, setSurvey]);
 
   async function handleSubmit(data, id) {
     if ('geolocation' in navigator) {
