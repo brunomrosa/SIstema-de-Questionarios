@@ -14,16 +14,16 @@ function CreateSurvey() {
       toast.error('Mínimo de 6 caracteres');
     }
     if(await schema.isValid(data)){
-      const response = await api
-      .post('/surveys', data)
+     await api
+      .post('/surveys', data).then(response =>{
+        history.push('/criar/perguntas?questionario=' + response.data.id)
+      })
       .catch((error) =>
         toast.error(
           'Ocorreu um erro ao criar o questionário, verifique se já existe um questionário com esse nome'
         )
       );
-    if(response){
-      history.push('/criar/perguntas?questionario=' + response.data.id);
-    }
+
 
     }
 
