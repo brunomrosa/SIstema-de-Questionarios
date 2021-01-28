@@ -89,19 +89,7 @@ class AnswerController {
     const { question } = req.query;
     const author_id = req.userId;
 
-    const alreadyAnswered = await Answer.findOne({
-      where: {
-        question_id: question
-      },
-    });
-    console.log(alreadyAnswered)
-    if(alreadyAnswered){
-      if (alreadyAnswered.author_id === author_id) {
-        return res
-          .status(409)
-          .json({ error: 'You already answered this questions' });
-      }
-    }
+
 
 
     const answer = await Answer.create({
