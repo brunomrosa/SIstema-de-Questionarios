@@ -21,8 +21,10 @@ function CreateSurvey() {
           'Ocorreu um erro ao criar o questionário, verifique se já existe um questionário com esse nome'
         )
       );
+    if(response){
+      history.push('/criar/perguntas?questionario=' + response.data.id);
+    }
 
-    history.push('/criar/perguntas?questionario=' + response.data.id);
     }
 
   }
