@@ -92,11 +92,15 @@ function CreateQuestions() {
           data.lat = position.coords.latitude;
           data.long = position.coords.longitude;
 
-          await api.post('/answers?question=' + id, data).catch((error) => {
-            toast.error('Você já respondeu essa pergunta');
+          const sucess =await api.post('/answers?question=' + id, data).catch((error) => {
+            toast.error('Erro ao responder a pergunta');
+            console.log(error)
           });
           loadQuestions();
-          toast.success('Criado com sucesso');
+          if(sucess){
+            toast.success('Criado com sucesso');
+          }
+
         },
         function (error) {
           if (error.code === 1) {

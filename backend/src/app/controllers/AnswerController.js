@@ -91,15 +91,18 @@ class AnswerController {
 
     const alreadyAnswered = await Answer.findOne({
       where: {
-        question_id: question,
+        question_id: question
       },
     });
-
-    if (alreadyAnswered) {
-      return res
-        .status(409)
-        .json({ error: 'You already answered this questions' });
+    console.log(alreadyAnswered)
+    if(alreadyAnswered){
+      if (alreadyAnswered.author_id === author_id) {
+        return res
+          .status(409)
+          .json({ error: 'You already answered this questions' });
+      }
     }
+
 
     const answer = await Answer.create({
       content,
