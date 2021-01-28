@@ -2,7 +2,7 @@
 
 ## Para rodar o backend você precisa seguir os passos abaixo
 
-##### A aplicação utiliza PostGRES, por isso utilizaremos Docker para rodar um container utilize o comando abaixo
+##### A aplicação utiliza PostgreSQL, por isso utilizaremos Docker para rodar um container utilize o comando abaixo
 
 ##### docker run -d -e POSTGRES_USER=agrotools -e POSTGRES_PASSWORD=agrotools -e POSTGRES_DB=agrotools -p 5432:5432 --name agrotools postgres:10 
 
