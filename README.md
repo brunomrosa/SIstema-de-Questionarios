@@ -15,7 +15,7 @@ Após isso, na pasta do projeto **renomeie o arquivo .env.example para .env e su
 - 1 - Rodar yarn OU npm install
 - 2 - Rodar yarn sequelize db:migrate OU npx sequelize db:migrate
 - 3 - Rodar yarn sequelize db:seed:all OU npx sequelize db:seed:all  
-- 4 - yarn dev OU npx run dev
+- 4 - yarn dev OU npm run dev
 
 ## Agora o backend já está rodando, após isso dentro da pasta frontend: 
 - 1 - Rode yarn OU npm install
